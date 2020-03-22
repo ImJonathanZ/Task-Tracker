@@ -79,7 +79,7 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\CSCI2020U-Final-Project.jar;%APP_HOME%\lib\javafx-controls-11.0.2-win.jar;%APP_HOME%\lib\javafx-graphics-11.0.2-win.jar;%APP_HOME%\lib\javafx-graphics-11.0.2.jar;%APP_HOME%\lib\javafx-base-11.0.2-win.jar;%APP_HOME%\lib\javafx-base-11.0.2.jar
+set CLASSPATH=%APP_HOME%\lib\CSCI2020U-Final-Project.jar;%APP_HOME%\lib\javafx-controls-11.0.2-linux.jar;%APP_HOME%\lib\javafx-graphics-11.0.2-linux.jar;%APP_HOME%\lib\javafx-graphics-11.0.2.jar;%APP_HOME%\lib\javafx-base-11.0.2-linux.jar;%APP_HOME%\lib\javafx-base-11.0.2.jar
 
 @rem Execute CSCI2020U-Final-Project
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %CSC_I2020_U_FINAL_PROJECT_OPTS%  -classpath "%CLASSPATH%" Main %CMD_LINE_ARGS%
