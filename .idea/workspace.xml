@@ -56,6 +56,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\2020proj\CSCI2020U-Final-Project\src\main\java" />
+    </key>
+  </component>
   <component name="RunManager" selected="Gradle.CSCI2020U-Final-Project [run]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />

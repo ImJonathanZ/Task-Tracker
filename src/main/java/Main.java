@@ -1,6 +1,9 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -11,10 +14,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        Label label = new Label("hello");
+        VBox vbox = new VBox();
+        DatePicker datePicker = new DatePicker();
+        TableView tableView = new TableView();
 
-        Scene Scene = new Scene(label);
-        primaryStage.setScene(Scene);
-        primaryStage.show();
     }
 }
