@@ -21,7 +21,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Main extends Application {
@@ -99,6 +98,8 @@ public class Main extends Application {
         //Main scene/stage setup
         Scene scene = new Scene(vbox);
         primaryStage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm()); //add css file
+        primaryStage.setTitle("Event Manager");
         primaryStage.show();
 
     }

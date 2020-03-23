@@ -1,0 +1,66 @@
+/*
+* Empty Stylesheet file.
+* Base from https://stackoverflow.com/questions/33938811/styling-a-tableview-in-css-javafx
+* modena.css (for datepicker) https://gist.github.com/maxd/63691840fc372f22f470
+
+Learning how to use css https://docs.oracle.com/javafx/2/get_started/css.htm
+*/
+
+.root{
+    -fx-background-color: #262626;
+}
+
+.table-view{
+   -fx-background-color: #6b6b6b;
+}
+
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: #060606;
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #414141;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #212121;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #EBA4F1;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-background-color: #313131
+}
+
+.label {
+    -fx-text-fill: white;
+}
+
+.text-field {
+    -fx-background-color: #414141;
+    -fx-text-fill: white;
+}
+
+.date-picker-popup > .month-year-pane {
+    -fx-background-color: black;
+}
