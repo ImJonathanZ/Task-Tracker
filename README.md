@@ -1,9 +1,13 @@
 # CSCI2020U-Final-Project
 
 Authors: 
+
 Ian Reynolds (ianreyn) - Idea creating, setting up structure of program, theme
+
 Jonathan Zhu (JonathanOTU)- File IO, gradle
+
 Obaida Issa. (obi834)- Mutithreading
+
 Sukhpreet Bansal (Sukhpreet-7)- Sockets
 
 This application is created with organization in mind. The user is able to add and remove tasks that they need to do in the future. They can select specific dates and see what kind of tasks they have to do on that day. 
