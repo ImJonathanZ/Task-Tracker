@@ -11,7 +11,7 @@
  * -Save and load functionality by fileIO
  * -Implement multithreading and servers/sockets
  * -Make it look nicer
-*/
+ */
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -20,10 +20,15 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
 import java.util.ArrayList;
 
 public class Main extends Application {
+
+    // IO Stream
+    DataOutputStream toServer = null;
 
     public static void main(String[] args) {
         launch(args);
@@ -78,9 +83,19 @@ public class Main extends Application {
 
         //When pressing the add button, this will occur
         add.setOnAction(e -> {
-            Task newTask = new Task(newTitle.getText(), newDate.getValue().toString(), newTime.getText());
-            taskRetriever.addTask(newTask);
-            fillTable(tableView, taskRetriever, datePicker, chartTitle);
+            try{
+                Task newTask = new Task(newTitle.getText(), newDate.getValue().toString(), newTime.getText());
+                taskRetriever.addTask(newTask);
+                fillTable(tableView, taskRetriever, datePicker, chartTitle);
+
+                // Send the data to the Server
+                toServer.writeChars(String.valueOf(newTask));
+                toServer.flush();
+
+            }catch (IOException er){
+                System.err.println(er);
+            }
+
         });
 
         //When pressing the datepicker at the top, this will occur
@@ -90,10 +105,34 @@ public class Main extends Application {
 
         //when pressing the delete button, this will occur
         remove.setOnAction(e -> {
-            Task selected = tableView.getSelectionModel().getSelectedItem();
-            taskRetriever.removeTask(selected);
-            fillTable(tableView, taskRetriever, datePicker, chartTitle);
+            try{
+                Task selected = tableView.getSelectionModel().getSelectedItem();
+                taskRetriever.removeTask(selected);
+                fillTable(tableView, taskRetriever, datePicker, chartTitle);
+
+                //System.getProperty("line.separator");
+
+                // Send data to the Server
+                toServer.writeChars(String.valueOf(selected));
+                toServer.flush();
+
+            } catch (IOException er){
+                System.err.println(er);
+            }
+
         });
+
+
+        try {
+            // A socket created to connect to the Server that's being hosted
+            Socket socket = new Socket("localhost", 7025);
+
+            // A Output Stream to send data to the Server
+            toServer = new DataOutputStream(socket.getOutputStream());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         //Main scene/stage setup
         Scene scene = new Scene(vbox);
