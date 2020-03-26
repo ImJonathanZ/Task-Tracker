@@ -41,6 +41,7 @@ public class Server extends Application {
 
                 while(true){
                     //System.out.println("Testing Server !");
+                    
                     // Get data from the client
                     char s = inputFromClient.readChar();
 
