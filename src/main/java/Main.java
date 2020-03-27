@@ -107,7 +107,7 @@ public class Main extends Application {
     }
 }
 
-//the program was not able to run with multithreading so this is the commented version
+//i was unable to get the program to run with multithreading so this is the commented version-obaida
 /* //Updates table with new values. Without this method, you can't add things in the date you're on
     @Override
     public void run() {
