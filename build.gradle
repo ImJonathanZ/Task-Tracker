@@ -4,15 +4,33 @@ plugins {
     id 'org.openjfx.javafxplugin' version '0.0.8'
 }
 
+javafx {
+    version = "11.0.2"
+    modules = [ 'javafx.controls']
+}
+
 repositories {
     mavenCentral()
 }
 
 sourceCompatibility = 11
 
-javafx {
-    version = "11.0.2"
-    modules = [ 'javafx.controls' ]
+task(runServer, dependsOn: 'classes', type: JavaExec){
+    doFirst {
+        jvmArgs = ['--module-path', classpath.asPath, '--add-modules', 'javafx.controls']
+    }
+    main = "Server"
+    classpath = sourceSets.main.runtimeClasspath
 }
 
-mainClassName = "Main"
+task(runMain, dependsOn: 'classes', type: JavaExec){
+    doFirst {
+        jvmArgs = ['--module-path', classpath.asPath, '--add-modules', 'javafx.controls']
+    }
+    main = "Main"
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+mainClassName = 'Main' 
+
+defaultTasks 'runMain', 'runServer'
